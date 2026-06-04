@@ -99,6 +99,8 @@ Wazuh API berjalan pada port `55000/TCP`. Karena keterbatasan bawaan pada bebera
 
 Prosedur penanganan insiden yang dirancang pada kanvas SOAR mengikuti diagram logika sekuensial berikut:
 
+![Gambar 1: Desain Alur Kerja (Playbook) Otomatisasi Respons Insiden Siber pada Kanvas Shuffle](assets/1.png)
+
 > **Gambar 1:** Desain Alur Kerja (Playbook) Otomatisasi Respons Insiden Siber pada Kanvas Shuffle.
 
 ### Penjelasan Teknis Setiap Node:
@@ -143,17 +145,23 @@ ab -n 50000 -c 50 http://10.0.0.5/
 
 Wazuh Manager berhasil mendeteksi anomali volume trafik berlebih dalam waktu singkat dan memicu alert tingkat tinggi, kemudian meneruskannya langsung ke platform SOAR.
 
+![Gambar 2: Struktur Data JSON Alert SIEM yang Berhasil Ditangkap oleh Node Trigger](assets/2.png)
+
 > **Gambar 2:** Struktur Data JSON Alert SIEM yang Berhasil Ditangkap oleh Node Trigger.
 
 ### 3. Eksekusi Orchestrator Sukses (SOAR Execution)
 
 Shuffle mengolah data yang masuk, meminta token otentikasi baru, dan menembakkan instruksi Active Response kembali ke API Wazuh. Parameter `affected_items` mencatat angka `1`, menandakan instruksi penahanan telah berhasil dikirimkan ke agen.
 
+![Gambar 3: Status Respon 200 OK dari RESTful API Wazuh Menandakan Perintah AR Diterima](assets/3.png)
+
 > **Gambar 3:** Status Respon 200 OK dari RESTful API Wazuh Menandakan Perintah AR Diterima.
 
 ### 4. Penahanan di Tingkat Firewall (Blue Team Enforcement)
 
 Pada sisi server agen target (hanip), skrip internal membaca instruksi dari Manager dan segera memanggil utilitas kernel Linux `iptables` untuk melakukan pembuangan paket data (DROP) terhadap IP asal serangan.
+
+![Gambar 4: Aturan Pertahanan Baru pada Tabel Netfilter Kernel Linux Berhasil Mengisolasi IP Penyerang](assets/4.png)
 
 > **Gambar 4:** Aturan Pertahanan Baru pada Tabel Netfilter Kernel Linux Berhasil Mengisolasi IP Penyerang.
 
