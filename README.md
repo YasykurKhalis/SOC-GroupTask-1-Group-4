@@ -12,7 +12,7 @@ Tujuan utama dari proyek ini adalah mengotomatisasi proses mitigasi serangan *Di
 |---------------------------|--------------|
 | Hanif Mawla Faizi         | 5027241064   |
 | Muhammad Khosyi Syehab           | 5027241089  |
-| Yasykur Khalis J M Y      | 50272411112  |
+| Yasykur Khalis J M Y      | 5027241112  |
 
 ---
 
