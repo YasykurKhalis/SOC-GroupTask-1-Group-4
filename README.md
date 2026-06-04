@@ -11,7 +11,7 @@ Tujuan utama dari proyek ini adalah mengotomatisasi proses mitigasi serangan *Di
 | Nama Anggota              | NRP          |
 |---------------------------|--------------|
 | Hanif Mawla Faizi         | 5027241064   |
-| M Khosyi Syehab           | 50272410xxx  |
+| Muhammad Khosyi Syehab           | 5027241089  |
 | Yasykur Khalis J M Y      | 50272411112  |
 
 ---
