@@ -6,7 +6,7 @@ Tujuan utama dari proyek ini adalah mengotomatisasi proses mitigasi serangan *Di
 
 ---
 
-## 👥 Tim Pengembang (Kelompok 4)
+## 👥 Kelompok 4
 
 | Nama Anggota              | NRP          |
 |---------------------------|--------------|
